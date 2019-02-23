@@ -73,6 +73,27 @@ template<> ::ssigmaapi::type::UserActivity* Arena::CreateMaybeMessage<::ssigmaap
 namespace ssigmaapi {
 namespace type {
 
+enum UserActivity_UserState {
+  UserActivity_UserState_WORKING = 0,
+  UserActivity_UserState_AWAY = 1,
+  UserActivity_UserState_UserActivity_UserState_INT_MIN_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32min,
+  UserActivity_UserState_UserActivity_UserState_INT_MAX_SENTINEL_DO_NOT_USE_ = ::google::protobuf::kint32max
+};
+bool UserActivity_UserState_IsValid(int value);
+const UserActivity_UserState UserActivity_UserState_UserState_MIN = UserActivity_UserState_WORKING;
+const UserActivity_UserState UserActivity_UserState_UserState_MAX = UserActivity_UserState_AWAY;
+const int UserActivity_UserState_UserState_ARRAYSIZE = UserActivity_UserState_UserState_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* UserActivity_UserState_descriptor();
+inline const ::std::string& UserActivity_UserState_Name(UserActivity_UserState value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    UserActivity_UserState_descriptor(), value);
+}
+inline bool UserActivity_UserState_Parse(
+    const ::std::string& name, UserActivity_UserState* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<UserActivity_UserState>(
+    UserActivity_UserState_descriptor(), name, value);
+}
 enum ApplicationWindow_WindowState {
   ApplicationWindow_WindowState_NORMAL = 0,
   ApplicationWindow_WindowState_MAXIMIZED = 1,
@@ -182,6 +203,32 @@ class UserActivity : public ::google::protobuf::Message /* @@protoc_insertion_po
 
   // nested types ----------------------------------------------------
 
+  typedef UserActivity_UserState UserState;
+  static const UserState WORKING =
+    UserActivity_UserState_WORKING;
+  static const UserState AWAY =
+    UserActivity_UserState_AWAY;
+  static inline bool UserState_IsValid(int value) {
+    return UserActivity_UserState_IsValid(value);
+  }
+  static const UserState UserState_MIN =
+    UserActivity_UserState_UserState_MIN;
+  static const UserState UserState_MAX =
+    UserActivity_UserState_UserState_MAX;
+  static const int UserState_ARRAYSIZE =
+    UserActivity_UserState_UserState_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  UserState_descriptor() {
+    return UserActivity_UserState_descriptor();
+  }
+  static inline const ::std::string& UserState_Name(UserState value) {
+    return UserActivity_UserState_Name(value);
+  }
+  static inline bool UserState_Parse(const ::std::string& name,
+      UserState* value) {
+    return UserActivity_UserState_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   // repeated .ssigmaapi.type.ApplicationWindow window_list = 4;
@@ -220,6 +267,12 @@ class UserActivity : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::google::protobuf::int64 end_timestamp() const;
   void set_end_timestamp(::google::protobuf::int64 value);
 
+  // .ssigmaapi.type.UserActivity.UserState user_state = 5;
+  void clear_user_state();
+  static const int kUserStateFieldNumber = 5;
+  ::ssigmaapi::type::UserActivity_UserState user_state() const;
+  void set_user_state(::ssigmaapi::type::UserActivity_UserState value);
+
   // @@protoc_insertion_point(class_scope:ssigmaapi.type.UserActivity)
  private:
 
@@ -228,6 +281,7 @@ class UserActivity : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::ssigmaapi::type::KeyboardInput* keyboard_input_;
   ::google::protobuf::int64 start_timestamp_;
   ::google::protobuf::int64 end_timestamp_;
+  int user_state_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::TableStruct;
 };
@@ -799,6 +853,20 @@ UserActivity::window_list() const {
   return window_list_;
 }
 
+// .ssigmaapi.type.UserActivity.UserState user_state = 5;
+inline void UserActivity::clear_user_state() {
+  user_state_ = 0;
+}
+inline ::ssigmaapi::type::UserActivity_UserState UserActivity::user_state() const {
+  // @@protoc_insertion_point(field_get:ssigmaapi.type.UserActivity.user_state)
+  return static_cast< ::ssigmaapi::type::UserActivity_UserState >(user_state_);
+}
+inline void UserActivity::set_user_state(::ssigmaapi::type::UserActivity_UserState value) {
+  
+  user_state_ = value;
+  // @@protoc_insertion_point(field_set:ssigmaapi.type.UserActivity.user_state)
+}
+
 // -------------------------------------------------------------------
 
 // KeyboardInput
@@ -1207,6 +1275,11 @@ inline void ApplicationWindow::set_timestamp(::google::protobuf::int64 value) {
 namespace google {
 namespace protobuf {
 
+template <> struct is_proto_enum< ::ssigmaapi::type::UserActivity_UserState> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::ssigmaapi::type::UserActivity_UserState>() {
+  return ::ssigmaapi::type::UserActivity_UserState_descriptor();
+}
 template <> struct is_proto_enum< ::ssigmaapi::type::ApplicationWindow_WindowState> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::ssigmaapi::type::ApplicationWindow_WindowState>() {
