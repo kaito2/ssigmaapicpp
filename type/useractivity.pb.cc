@@ -116,7 +116,7 @@ void InitDefaults() {
 }
 
 ::google::protobuf::Metadata file_level_metadata[4];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
@@ -128,6 +128,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::UserActivity, end_timestamp_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::UserActivity, keyboard_input_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::UserActivity, window_list_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::UserActivity, user_state_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::KeyboardInput, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -159,9 +160,9 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ssigmaapi::type::UserActivity)},
-  { 9, -1, sizeof(::ssigmaapi::type::KeyboardInput)},
-  { 15, -1, sizeof(::ssigmaapi::type::Point)},
-  { 22, -1, sizeof(::ssigmaapi::type::ApplicationWindow)},
+  { 10, -1, sizeof(::ssigmaapi::type::KeyboardInput)},
+  { 16, -1, sizeof(::ssigmaapi::type::Point)},
+  { 23, -1, sizeof(::ssigmaapi::type::ApplicationWindow)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -193,26 +194,29 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n!ssigmaapi/type/useractivity.proto\022\016ssi"
-      "gmaapi.type\"\255\001\n\014UserActivity\022\027\n\017start_ti"
+      "gmaapi.type\"\215\002\n\014UserActivity\022\027\n\017start_ti"
       "mestamp\030\001 \001(\003\022\025\n\rend_timestamp\030\002 \001(\003\0225\n\016"
       "keyboard_input\030\003 \001(\0132\035.ssigmaapi.type.Ke"
       "yboardInput\0226\n\013window_list\030\004 \003(\0132!.ssigm"
-      "aapi.type.ApplicationWindow\"%\n\rKeyboardI"
-      "nput\022\024\n\014stroke_count\030\001 \001(\003\"\035\n\005Point\022\t\n\001x"
-      "\030\001 \001(\003\022\t\n\001y\030\002 \001(\003\"\315\002\n\021ApplicationWindow\022"
-      "&\n\007lefttop\030\001 \001(\0132\025.ssigmaapi.type.Point\022"
-      "\016\n\006height\030\002 \001(\003\022\r\n\005width\030\003 \001(\003\022\r\n\005title\030"
-      "\004 \001(\t\022\024\n\014program_name\030\005 \001(\t\022\023\n\013descripti"
-      "on\030\006 \001(\t\022\017\n\007company\030\007 \001(\t\022\025\n\ris_foregrou"
-      "nd\030\010 \001(\010\022C\n\014window_state\030\t \001(\0162-.ssigmaa"
-      "pi.type.ApplicationWindow.WindowState\022\021\n"
-      "\ttimestamp\030\n \001(\003\"7\n\013WindowState\022\n\n\006NORMA"
-      "L\020\000\022\r\n\tMAXIMIZED\020\001\022\r\n\tMINIMIZED\020\002B>Z<git"
-      "hub.com/kaito2/ssigmaapigo/type/useracti"
-      "vity;useractivityb\006proto3"
+      "aapi.type.ApplicationWindow\022:\n\nuser_stat"
+      "e\030\005 \001(\0162&.ssigmaapi.type.UserActivity.Us"
+      "erState\"\"\n\tUserState\022\013\n\007WORKING\020\000\022\010\n\004AWA"
+      "Y\020\001\"%\n\rKeyboardInput\022\024\n\014stroke_count\030\001 \001"
+      "(\003\"\035\n\005Point\022\t\n\001x\030\001 \001(\003\022\t\n\001y\030\002 \001(\003\"\315\002\n\021Ap"
+      "plicationWindow\022&\n\007lefttop\030\001 \001(\0132\025.ssigm"
+      "aapi.type.Point\022\016\n\006height\030\002 \001(\003\022\r\n\005width"
+      "\030\003 \001(\003\022\r\n\005title\030\004 \001(\t\022\024\n\014program_name\030\005 "
+      "\001(\t\022\023\n\013description\030\006 \001(\t\022\017\n\007company\030\007 \001("
+      "\t\022\025\n\ris_foreground\030\010 \001(\010\022C\n\014window_state"
+      "\030\t \001(\0162-.ssigmaapi.type.ApplicationWindo"
+      "w.WindowState\022\021\n\ttimestamp\030\n \001(\003\"7\n\013Wind"
+      "owState\022\n\n\006NORMAL\020\000\022\r\n\tMAXIMIZED\020\001\022\r\n\tMI"
+      "NIMIZED\020\002B>Z<github.com/kaito2/ssigmaapi"
+      "go/type/useractivity;useractivityb\006proto"
+      "3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 705);
+      descriptor, 801);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "ssigmaapi/type/useractivity.proto", &protobuf_RegisterTypes);
 }
@@ -230,9 +234,30 @@ struct StaticDescriptorInitializer {
 }  // namespace protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto
 namespace ssigmaapi {
 namespace type {
-const ::google::protobuf::EnumDescriptor* ApplicationWindow_WindowState_descriptor() {
+const ::google::protobuf::EnumDescriptor* UserActivity_UserState_descriptor() {
   protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::file_level_enum_descriptors[0];
+}
+bool UserActivity_UserState_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const UserActivity_UserState UserActivity::WORKING;
+const UserActivity_UserState UserActivity::AWAY;
+const UserActivity_UserState UserActivity::UserState_MIN;
+const UserActivity_UserState UserActivity::UserState_MAX;
+const int UserActivity::UserState_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* ApplicationWindow_WindowState_descriptor() {
+  protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::file_level_enum_descriptors[1];
 }
 bool ApplicationWindow_WindowState_IsValid(int value) {
   switch (value) {
@@ -265,6 +290,7 @@ const int UserActivity::kStartTimestampFieldNumber;
 const int UserActivity::kEndTimestampFieldNumber;
 const int UserActivity::kKeyboardInputFieldNumber;
 const int UserActivity::kWindowListFieldNumber;
+const int UserActivity::kUserStateFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 UserActivity::UserActivity()
@@ -285,15 +311,15 @@ UserActivity::UserActivity(const UserActivity& from)
     keyboard_input_ = NULL;
   }
   ::memcpy(&start_timestamp_, &from.start_timestamp_,
-    static_cast<size_t>(reinterpret_cast<char*>(&end_timestamp_) -
-    reinterpret_cast<char*>(&start_timestamp_)) + sizeof(end_timestamp_));
+    static_cast<size_t>(reinterpret_cast<char*>(&user_state_) -
+    reinterpret_cast<char*>(&start_timestamp_)) + sizeof(user_state_));
   // @@protoc_insertion_point(copy_constructor:ssigmaapi.type.UserActivity)
 }
 
 void UserActivity::SharedCtor() {
   ::memset(&keyboard_input_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&end_timestamp_) -
-      reinterpret_cast<char*>(&keyboard_input_)) + sizeof(end_timestamp_));
+      reinterpret_cast<char*>(&user_state_) -
+      reinterpret_cast<char*>(&keyboard_input_)) + sizeof(user_state_));
 }
 
 UserActivity::~UserActivity() {
@@ -331,8 +357,8 @@ void UserActivity::Clear() {
   }
   keyboard_input_ = NULL;
   ::memset(&start_timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&end_timestamp_) -
-      reinterpret_cast<char*>(&start_timestamp_)) + sizeof(end_timestamp_));
+      reinterpret_cast<char*>(&user_state_) -
+      reinterpret_cast<char*>(&start_timestamp_)) + sizeof(user_state_));
   _internal_metadata_.Clear();
 }
 
@@ -398,6 +424,21 @@ bool UserActivity::MergePartialFromCodedStream(
         break;
       }
 
+      // .ssigmaapi.type.UserActivity.UserState user_state = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          set_user_state(static_cast< ::ssigmaapi::type::UserActivity_UserState >(value));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -449,6 +490,12 @@ void UserActivity::SerializeWithCachedSizes(
       output);
   }
 
+  // .ssigmaapi.type.UserActivity.UserState user_state = 5;
+  if (this->user_state() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      5, this->user_state(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -486,6 +533,12 @@ void UserActivity::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         4, this->window_list(static_cast<int>(i)), deterministic, target);
+  }
+
+  // .ssigmaapi.type.UserActivity.UserState user_state = 5;
+  if (this->user_state() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      5, this->user_state(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -537,6 +590,12 @@ size_t UserActivity::ByteSizeLong() const {
         this->end_timestamp());
   }
 
+  // .ssigmaapi.type.UserActivity.UserState user_state = 5;
+  if (this->user_state() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->user_state());
+  }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -574,6 +633,9 @@ void UserActivity::MergeFrom(const UserActivity& from) {
   if (from.end_timestamp() != 0) {
     set_end_timestamp(from.end_timestamp());
   }
+  if (from.user_state() != 0) {
+    set_user_state(from.user_state());
+  }
 }
 
 void UserActivity::CopyFrom(const ::google::protobuf::Message& from) {
@@ -604,6 +666,7 @@ void UserActivity::InternalSwap(UserActivity* other) {
   swap(keyboard_input_, other->keyboard_input_);
   swap(start_timestamp_, other->start_timestamp_);
   swap(end_timestamp_, other->end_timestamp_);
+  swap(user_state_, other->user_state_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
