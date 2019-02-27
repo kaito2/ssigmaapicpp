@@ -20,7 +20,7 @@
 // @@protoc_insertion_point(includes)
 
 namespace protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_UserActivity;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_UserActivity;
 }  // namespace protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto
 namespace ssigmaapi {
 namespace productibit {

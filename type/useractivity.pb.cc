@@ -21,6 +21,7 @@
 
 namespace protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto {
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_KeyboardInput;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_MouseInput;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Point;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ApplicationWindow;
 }  // namespace protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto
@@ -36,6 +37,11 @@ class KeyboardInputDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<KeyboardInput>
       _instance;
 } _KeyboardInput_default_instance_;
+class MouseInputDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<MouseInput>
+      _instance;
+} _MouseInput_default_instance_;
 class PointDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Point>
@@ -60,10 +66,11 @@ static void InitDefaultsUserActivity() {
   ::ssigmaapi::type::UserActivity::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<2> scc_info_UserActivity =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsUserActivity}, {
+::google::protobuf::internal::SCCInfo<3> scc_info_UserActivity =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsUserActivity}, {
       &protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::scc_info_KeyboardInput.base,
-      &protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::scc_info_ApplicationWindow.base,}};
+      &protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::scc_info_ApplicationWindow.base,
+      &protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::scc_info_MouseInput.base,}};
 
 static void InitDefaultsKeyboardInput() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -78,6 +85,20 @@ static void InitDefaultsKeyboardInput() {
 
 ::google::protobuf::internal::SCCInfo<0> scc_info_KeyboardInput =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsKeyboardInput}, {}};
+
+static void InitDefaultsMouseInput() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::ssigmaapi::type::_MouseInput_default_instance_;
+    new (ptr) ::ssigmaapi::type::MouseInput();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::ssigmaapi::type::MouseInput::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_MouseInput =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsMouseInput}, {}};
 
 static void InitDefaultsPoint() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -111,11 +132,12 @@ static void InitDefaultsApplicationWindow() {
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_UserActivity.base);
   ::google::protobuf::internal::InitSCC(&scc_info_KeyboardInput.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_MouseInput.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Point.base);
   ::google::protobuf::internal::InitSCC(&scc_info_ApplicationWindow.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[4];
+::google::protobuf::Metadata file_level_metadata[5];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -129,12 +151,21 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::UserActivity, keyboard_input_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::UserActivity, window_list_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::UserActivity, user_state_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::UserActivity, mouse_input_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::KeyboardInput, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::KeyboardInput, stroke_count_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::MouseInput, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::MouseInput, left_click_count_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::MouseInput, middle_click_count_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::MouseInput, right_click_count_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::Point, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -160,14 +191,16 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ssigmaapi::type::UserActivity)},
-  { 10, -1, sizeof(::ssigmaapi::type::KeyboardInput)},
-  { 16, -1, sizeof(::ssigmaapi::type::Point)},
-  { 23, -1, sizeof(::ssigmaapi::type::ApplicationWindow)},
+  { 11, -1, sizeof(::ssigmaapi::type::KeyboardInput)},
+  { 17, -1, sizeof(::ssigmaapi::type::MouseInput)},
+  { 25, -1, sizeof(::ssigmaapi::type::Point)},
+  { 32, -1, sizeof(::ssigmaapi::type::ApplicationWindow)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::ssigmaapi::type::_UserActivity_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::ssigmaapi::type::_KeyboardInput_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::ssigmaapi::type::_MouseInput_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::ssigmaapi::type::_Point_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::ssigmaapi::type::_ApplicationWindow_default_instance_),
 };
@@ -187,36 +220,39 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 4);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 5);
 }
 
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n!ssigmaapi/type/useractivity.proto\022\016ssi"
-      "gmaapi.type\"\215\002\n\014UserActivity\022\027\n\017start_ti"
+      "gmaapi.type\"\276\002\n\014UserActivity\022\027\n\017start_ti"
       "mestamp\030\001 \001(\003\022\025\n\rend_timestamp\030\002 \001(\003\0225\n\016"
       "keyboard_input\030\003 \001(\0132\035.ssigmaapi.type.Ke"
       "yboardInput\0226\n\013window_list\030\004 \003(\0132!.ssigm"
       "aapi.type.ApplicationWindow\022:\n\nuser_stat"
       "e\030\005 \001(\0162&.ssigmaapi.type.UserActivity.Us"
-      "erState\"\"\n\tUserState\022\013\n\007WORKING\020\000\022\010\n\004AWA"
-      "Y\020\001\"%\n\rKeyboardInput\022\024\n\014stroke_count\030\001 \001"
-      "(\003\"\035\n\005Point\022\t\n\001x\030\001 \001(\003\022\t\n\001y\030\002 \001(\003\"\315\002\n\021Ap"
-      "plicationWindow\022&\n\007lefttop\030\001 \001(\0132\025.ssigm"
-      "aapi.type.Point\022\016\n\006height\030\002 \001(\003\022\r\n\005width"
-      "\030\003 \001(\003\022\r\n\005title\030\004 \001(\t\022\024\n\014program_name\030\005 "
-      "\001(\t\022\023\n\013description\030\006 \001(\t\022\017\n\007company\030\007 \001("
-      "\t\022\025\n\ris_foreground\030\010 \001(\010\022C\n\014window_state"
-      "\030\t \001(\0162-.ssigmaapi.type.ApplicationWindo"
-      "w.WindowState\022\021\n\ttimestamp\030\n \001(\003\"7\n\013Wind"
-      "owState\022\n\n\006NORMAL\020\000\022\r\n\tMAXIMIZED\020\001\022\r\n\tMI"
-      "NIMIZED\020\002B>Z<github.com/kaito2/ssigmaapi"
-      "go/type/useractivity;useractivityb\006proto"
-      "3"
+      "erState\022/\n\013mouse_input\030\006 \001(\0132\032.ssigmaapi"
+      ".type.MouseInput\"\"\n\tUserState\022\013\n\007WORKING"
+      "\020\000\022\010\n\004AWAY\020\001\"%\n\rKeyboardInput\022\024\n\014stroke_"
+      "count\030\001 \001(\003\"]\n\nMouseInput\022\030\n\020left_click_"
+      "count\030\001 \001(\003\022\032\n\022middle_click_count\030\002 \001(\003\022"
+      "\031\n\021right_click_count\030\003 \001(\003\"\035\n\005Point\022\t\n\001x"
+      "\030\001 \001(\003\022\t\n\001y\030\002 \001(\003\"\315\002\n\021ApplicationWindow\022"
+      "&\n\007lefttop\030\001 \001(\0132\025.ssigmaapi.type.Point\022"
+      "\016\n\006height\030\002 \001(\003\022\r\n\005width\030\003 \001(\003\022\r\n\005title\030"
+      "\004 \001(\t\022\024\n\014program_name\030\005 \001(\t\022\023\n\013descripti"
+      "on\030\006 \001(\t\022\017\n\007company\030\007 \001(\t\022\025\n\ris_foregrou"
+      "nd\030\010 \001(\010\022C\n\014window_state\030\t \001(\0162-.ssigmaa"
+      "pi.type.ApplicationWindow.WindowState\022\021\n"
+      "\ttimestamp\030\n \001(\003\"7\n\013WindowState\022\n\n\006NORMA"
+      "L\020\000\022\r\n\tMAXIMIZED\020\001\022\r\n\tMINIMIZED\020\002B>Z<git"
+      "hub.com/kaito2/ssigmaapigo/type/useracti"
+      "vity;useractivityb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 801);
+      descriptor, 945);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "ssigmaapi/type/useractivity.proto", &protobuf_RegisterTypes);
 }
@@ -284,6 +320,8 @@ const int ApplicationWindow::WindowState_ARRAYSIZE;
 void UserActivity::InitAsDefaultInstance() {
   ::ssigmaapi::type::_UserActivity_default_instance_._instance.get_mutable()->keyboard_input_ = const_cast< ::ssigmaapi::type::KeyboardInput*>(
       ::ssigmaapi::type::KeyboardInput::internal_default_instance());
+  ::ssigmaapi::type::_UserActivity_default_instance_._instance.get_mutable()->mouse_input_ = const_cast< ::ssigmaapi::type::MouseInput*>(
+      ::ssigmaapi::type::MouseInput::internal_default_instance());
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int UserActivity::kStartTimestampFieldNumber;
@@ -291,6 +329,7 @@ const int UserActivity::kEndTimestampFieldNumber;
 const int UserActivity::kKeyboardInputFieldNumber;
 const int UserActivity::kWindowListFieldNumber;
 const int UserActivity::kUserStateFieldNumber;
+const int UserActivity::kMouseInputFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 UserActivity::UserActivity()
@@ -309,6 +348,11 @@ UserActivity::UserActivity(const UserActivity& from)
     keyboard_input_ = new ::ssigmaapi::type::KeyboardInput(*from.keyboard_input_);
   } else {
     keyboard_input_ = NULL;
+  }
+  if (from.has_mouse_input()) {
+    mouse_input_ = new ::ssigmaapi::type::MouseInput(*from.mouse_input_);
+  } else {
+    mouse_input_ = NULL;
   }
   ::memcpy(&start_timestamp_, &from.start_timestamp_,
     static_cast<size_t>(reinterpret_cast<char*>(&user_state_) -
@@ -329,6 +373,7 @@ UserActivity::~UserActivity() {
 
 void UserActivity::SharedDtor() {
   if (this != internal_default_instance()) delete keyboard_input_;
+  if (this != internal_default_instance()) delete mouse_input_;
 }
 
 void UserActivity::SetCachedSize(int size) const {
@@ -356,6 +401,10 @@ void UserActivity::Clear() {
     delete keyboard_input_;
   }
   keyboard_input_ = NULL;
+  if (GetArenaNoVirtual() == NULL && mouse_input_ != NULL) {
+    delete mouse_input_;
+  }
+  mouse_input_ = NULL;
   ::memset(&start_timestamp_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&user_state_) -
       reinterpret_cast<char*>(&start_timestamp_)) + sizeof(user_state_));
@@ -439,6 +488,18 @@ bool UserActivity::MergePartialFromCodedStream(
         break;
       }
 
+      // .ssigmaapi.type.MouseInput mouse_input = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_mouse_input()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -496,6 +557,12 @@ void UserActivity::SerializeWithCachedSizes(
       5, this->user_state(), output);
   }
 
+  // .ssigmaapi.type.MouseInput mouse_input = 6;
+  if (this->has_mouse_input()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      6, this->_internal_mouse_input(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -541,6 +608,13 @@ void UserActivity::SerializeWithCachedSizes(
       5, this->user_state(), target);
   }
 
+  // .ssigmaapi.type.MouseInput mouse_input = 6;
+  if (this->has_mouse_input()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        6, this->_internal_mouse_input(), deterministic, target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -574,6 +648,13 @@ size_t UserActivity::ByteSizeLong() const {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::MessageSize(
         *keyboard_input_);
+  }
+
+  // .ssigmaapi.type.MouseInput mouse_input = 6;
+  if (this->has_mouse_input()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *mouse_input_);
   }
 
   // int64 start_timestamp = 1;
@@ -627,6 +708,9 @@ void UserActivity::MergeFrom(const UserActivity& from) {
   if (from.has_keyboard_input()) {
     mutable_keyboard_input()->::ssigmaapi::type::KeyboardInput::MergeFrom(from.keyboard_input());
   }
+  if (from.has_mouse_input()) {
+    mutable_mouse_input()->::ssigmaapi::type::MouseInput::MergeFrom(from.mouse_input());
+  }
   if (from.start_timestamp() != 0) {
     set_start_timestamp(from.start_timestamp());
   }
@@ -664,6 +748,7 @@ void UserActivity::InternalSwap(UserActivity* other) {
   using std::swap;
   CastToBase(&window_list_)->InternalSwap(CastToBase(&other->window_list_));
   swap(keyboard_input_, other->keyboard_input_);
+  swap(mouse_input_, other->mouse_input_);
   swap(start_timestamp_, other->start_timestamp_);
   swap(end_timestamp_, other->end_timestamp_);
   swap(user_state_, other->user_state_);
@@ -894,6 +979,307 @@ void KeyboardInput::InternalSwap(KeyboardInput* other) {
 }
 
 ::google::protobuf::Metadata KeyboardInput::GetMetadata() const {
+  protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void MouseInput::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int MouseInput::kLeftClickCountFieldNumber;
+const int MouseInput::kMiddleClickCountFieldNumber;
+const int MouseInput::kRightClickCountFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+MouseInput::MouseInput()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::scc_info_MouseInput.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:ssigmaapi.type.MouseInput)
+}
+MouseInput::MouseInput(const MouseInput& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&left_click_count_, &from.left_click_count_,
+    static_cast<size_t>(reinterpret_cast<char*>(&right_click_count_) -
+    reinterpret_cast<char*>(&left_click_count_)) + sizeof(right_click_count_));
+  // @@protoc_insertion_point(copy_constructor:ssigmaapi.type.MouseInput)
+}
+
+void MouseInput::SharedCtor() {
+  ::memset(&left_click_count_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&right_click_count_) -
+      reinterpret_cast<char*>(&left_click_count_)) + sizeof(right_click_count_));
+}
+
+MouseInput::~MouseInput() {
+  // @@protoc_insertion_point(destructor:ssigmaapi.type.MouseInput)
+  SharedDtor();
+}
+
+void MouseInput::SharedDtor() {
+}
+
+void MouseInput::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* MouseInput::descriptor() {
+  ::protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const MouseInput& MouseInput::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::scc_info_MouseInput.base);
+  return *internal_default_instance();
+}
+
+
+void MouseInput::Clear() {
+// @@protoc_insertion_point(message_clear_start:ssigmaapi.type.MouseInput)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&left_click_count_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&right_click_count_) -
+      reinterpret_cast<char*>(&left_click_count_)) + sizeof(right_click_count_));
+  _internal_metadata_.Clear();
+}
+
+bool MouseInput::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:ssigmaapi.type.MouseInput)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int64 left_click_count = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &left_click_count_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int64 middle_click_count = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &middle_click_count_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int64 right_click_count = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &right_click_count_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:ssigmaapi.type.MouseInput)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:ssigmaapi.type.MouseInput)
+  return false;
+#undef DO_
+}
+
+void MouseInput::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:ssigmaapi.type.MouseInput)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 left_click_count = 1;
+  if (this->left_click_count() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->left_click_count(), output);
+  }
+
+  // int64 middle_click_count = 2;
+  if (this->middle_click_count() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->middle_click_count(), output);
+  }
+
+  // int64 right_click_count = 3;
+  if (this->right_click_count() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(3, this->right_click_count(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:ssigmaapi.type.MouseInput)
+}
+
+::google::protobuf::uint8* MouseInput::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:ssigmaapi.type.MouseInput)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int64 left_click_count = 1;
+  if (this->left_click_count() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->left_click_count(), target);
+  }
+
+  // int64 middle_click_count = 2;
+  if (this->middle_click_count() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->middle_click_count(), target);
+  }
+
+  // int64 right_click_count = 3;
+  if (this->right_click_count() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(3, this->right_click_count(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:ssigmaapi.type.MouseInput)
+  return target;
+}
+
+size_t MouseInput::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:ssigmaapi.type.MouseInput)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // int64 left_click_count = 1;
+  if (this->left_click_count() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->left_click_count());
+  }
+
+  // int64 middle_click_count = 2;
+  if (this->middle_click_count() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->middle_click_count());
+  }
+
+  // int64 right_click_count = 3;
+  if (this->right_click_count() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->right_click_count());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void MouseInput::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:ssigmaapi.type.MouseInput)
+  GOOGLE_DCHECK_NE(&from, this);
+  const MouseInput* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const MouseInput>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ssigmaapi.type.MouseInput)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:ssigmaapi.type.MouseInput)
+    MergeFrom(*source);
+  }
+}
+
+void MouseInput::MergeFrom(const MouseInput& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:ssigmaapi.type.MouseInput)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.left_click_count() != 0) {
+    set_left_click_count(from.left_click_count());
+  }
+  if (from.middle_click_count() != 0) {
+    set_middle_click_count(from.middle_click_count());
+  }
+  if (from.right_click_count() != 0) {
+    set_right_click_count(from.right_click_count());
+  }
+}
+
+void MouseInput::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:ssigmaapi.type.MouseInput)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void MouseInput::CopyFrom(const MouseInput& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:ssigmaapi.type.MouseInput)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool MouseInput::IsInitialized() const {
+  return true;
+}
+
+void MouseInput::Swap(MouseInput* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void MouseInput::InternalSwap(MouseInput* other) {
+  using std::swap;
+  swap(left_click_count_, other->left_click_count_);
+  swap(middle_click_count_, other->middle_click_count_);
+  swap(right_click_count_, other->right_click_count_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata MouseInput::GetMetadata() const {
   protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -1828,6 +2214,9 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ssigmaapi::type::UserActivity* A
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ssigmaapi::type::KeyboardInput* Arena::CreateMaybeMessage< ::ssigmaapi::type::KeyboardInput >(Arena* arena) {
   return Arena::CreateInternal< ::ssigmaapi::type::KeyboardInput >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ssigmaapi::type::MouseInput* Arena::CreateMaybeMessage< ::ssigmaapi::type::MouseInput >(Arena* arena) {
+  return Arena::CreateInternal< ::ssigmaapi::type::MouseInput >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ssigmaapi::type::Point* Arena::CreateMaybeMessage< ::ssigmaapi::type::Point >(Arena* arena) {
   return Arena::CreateInternal< ::ssigmaapi::type::Point >(arena);
