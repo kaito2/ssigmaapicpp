@@ -271,29 +271,29 @@ class UserActivity : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::ssigmaapi::type::MouseInput* mutable_mouse_input();
   void set_allocated_mouse_input(::ssigmaapi::type::MouseInput* mouse_input);
 
-  // int64 start_timestamp = 1;
+  // int32 start_timestamp = 1;
   void clear_start_timestamp();
   static const int kStartTimestampFieldNumber = 1;
-  ::google::protobuf::int64 start_timestamp() const;
-  void set_start_timestamp(::google::protobuf::int64 value);
+  ::google::protobuf::int32 start_timestamp() const;
+  void set_start_timestamp(::google::protobuf::int32 value);
 
-  // int64 end_timestamp = 2;
+  // int32 end_timestamp = 2;
   void clear_end_timestamp();
   static const int kEndTimestampFieldNumber = 2;
-  ::google::protobuf::int64 end_timestamp() const;
-  void set_end_timestamp(::google::protobuf::int64 value);
-
-  // int64 switch_application_count = 7;
-  void clear_switch_application_count();
-  static const int kSwitchApplicationCountFieldNumber = 7;
-  ::google::protobuf::int64 switch_application_count() const;
-  void set_switch_application_count(::google::protobuf::int64 value);
+  ::google::protobuf::int32 end_timestamp() const;
+  void set_end_timestamp(::google::protobuf::int32 value);
 
   // .ssigmaapi.type.UserActivity.UserState user_state = 5;
   void clear_user_state();
   static const int kUserStateFieldNumber = 5;
   ::ssigmaapi::type::UserActivity_UserState user_state() const;
   void set_user_state(::ssigmaapi::type::UserActivity_UserState value);
+
+  // int32 switch_application_count = 7;
+  void clear_switch_application_count();
+  static const int kSwitchApplicationCountFieldNumber = 7;
+  ::google::protobuf::int32 switch_application_count() const;
+  void set_switch_application_count(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:ssigmaapi.type.UserActivity)
  private:
@@ -302,10 +302,10 @@ class UserActivity : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::google::protobuf::RepeatedPtrField< ::ssigmaapi::type::ApplicationWindow > window_list_;
   ::ssigmaapi::type::KeyboardInput* keyboard_input_;
   ::ssigmaapi::type::MouseInput* mouse_input_;
-  ::google::protobuf::int64 start_timestamp_;
-  ::google::protobuf::int64 end_timestamp_;
-  ::google::protobuf::int64 switch_application_count_;
+  ::google::protobuf::int32 start_timestamp_;
+  ::google::protobuf::int32 end_timestamp_;
   int user_state_;
+  ::google::protobuf::int32 switch_application_count_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::TableStruct;
 };
@@ -398,17 +398,17 @@ class KeyboardInput : public ::google::protobuf::Message /* @@protoc_insertion_p
 
   // accessors -------------------------------------------------------
 
-  // int64 stroke_count = 1;
+  // int32 stroke_count = 1;
   void clear_stroke_count();
   static const int kStrokeCountFieldNumber = 1;
-  ::google::protobuf::int64 stroke_count() const;
-  void set_stroke_count(::google::protobuf::int64 value);
+  ::google::protobuf::int32 stroke_count() const;
+  void set_stroke_count(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:ssigmaapi.type.KeyboardInput)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int64 stroke_count_;
+  ::google::protobuf::int32 stroke_count_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::TableStruct;
 };
@@ -501,38 +501,38 @@ class MouseInput : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
-  // int64 click_count = 1;
+  // int32 click_count = 1;
   void clear_click_count();
   static const int kClickCountFieldNumber = 1;
-  ::google::protobuf::int64 click_count() const;
-  void set_click_count(::google::protobuf::int64 value);
+  ::google::protobuf::int32 click_count() const;
+  void set_click_count(::google::protobuf::int32 value);
 
-  // int64 left_click_count = 2;
+  // int32 left_click_count = 2;
   void clear_left_click_count();
   static const int kLeftClickCountFieldNumber = 2;
-  ::google::protobuf::int64 left_click_count() const;
-  void set_left_click_count(::google::protobuf::int64 value);
+  ::google::protobuf::int32 left_click_count() const;
+  void set_left_click_count(::google::protobuf::int32 value);
 
-  // int64 middle_click_count = 3;
+  // int32 middle_click_count = 3;
   void clear_middle_click_count();
   static const int kMiddleClickCountFieldNumber = 3;
-  ::google::protobuf::int64 middle_click_count() const;
-  void set_middle_click_count(::google::protobuf::int64 value);
+  ::google::protobuf::int32 middle_click_count() const;
+  void set_middle_click_count(::google::protobuf::int32 value);
 
-  // int64 right_click_count = 4;
+  // int32 right_click_count = 4;
   void clear_right_click_count();
   static const int kRightClickCountFieldNumber = 4;
-  ::google::protobuf::int64 right_click_count() const;
-  void set_right_click_count(::google::protobuf::int64 value);
+  ::google::protobuf::int32 right_click_count() const;
+  void set_right_click_count(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:ssigmaapi.type.MouseInput)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int64 click_count_;
-  ::google::protobuf::int64 left_click_count_;
-  ::google::protobuf::int64 middle_click_count_;
-  ::google::protobuf::int64 right_click_count_;
+  ::google::protobuf::int32 click_count_;
+  ::google::protobuf::int32 left_click_count_;
+  ::google::protobuf::int32 middle_click_count_;
+  ::google::protobuf::int32 right_click_count_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::TableStruct;
 };
@@ -625,24 +625,24 @@ class Point : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
 
   // accessors -------------------------------------------------------
 
-  // int64 x = 1;
+  // int32 x = 1;
   void clear_x();
   static const int kXFieldNumber = 1;
-  ::google::protobuf::int64 x() const;
-  void set_x(::google::protobuf::int64 value);
+  ::google::protobuf::int32 x() const;
+  void set_x(::google::protobuf::int32 value);
 
-  // int64 y = 2;
+  // int32 y = 2;
   void clear_y();
   static const int kYFieldNumber = 2;
-  ::google::protobuf::int64 y() const;
-  void set_y(::google::protobuf::int64 value);
+  ::google::protobuf::int32 y() const;
+  void set_y(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:ssigmaapi.type.Point)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int64 x_;
-  ::google::protobuf::int64 y_;
+  ::google::protobuf::int32 x_;
+  ::google::protobuf::int32 y_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::TableStruct;
 };
@@ -831,17 +831,17 @@ class ApplicationWindow : public ::google::protobuf::Message /* @@protoc_inserti
   ::ssigmaapi::type::Point* mutable_lefttop();
   void set_allocated_lefttop(::ssigmaapi::type::Point* lefttop);
 
-  // int64 height = 2;
+  // int32 height = 2;
   void clear_height();
   static const int kHeightFieldNumber = 2;
-  ::google::protobuf::int64 height() const;
-  void set_height(::google::protobuf::int64 value);
+  ::google::protobuf::int32 height() const;
+  void set_height(::google::protobuf::int32 value);
 
-  // int64 width = 3;
+  // int32 width = 3;
   void clear_width();
   static const int kWidthFieldNumber = 3;
-  ::google::protobuf::int64 width() const;
-  void set_width(::google::protobuf::int64 value);
+  ::google::protobuf::int32 width() const;
+  void set_width(::google::protobuf::int32 value);
 
   // bool is_foreground = 8;
   void clear_is_foreground();
@@ -855,11 +855,11 @@ class ApplicationWindow : public ::google::protobuf::Message /* @@protoc_inserti
   ::ssigmaapi::type::ApplicationWindow_WindowState window_state() const;
   void set_window_state(::ssigmaapi::type::ApplicationWindow_WindowState value);
 
-  // int64 timestamp = 10;
+  // int32 timestamp = 10;
   void clear_timestamp();
   static const int kTimestampFieldNumber = 10;
-  ::google::protobuf::int64 timestamp() const;
-  void set_timestamp(::google::protobuf::int64 value);
+  ::google::protobuf::int32 timestamp() const;
+  void set_timestamp(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:ssigmaapi.type.ApplicationWindow)
  private:
@@ -870,11 +870,11 @@ class ApplicationWindow : public ::google::protobuf::Message /* @@protoc_inserti
   ::google::protobuf::internal::ArenaStringPtr description_;
   ::google::protobuf::internal::ArenaStringPtr company_;
   ::ssigmaapi::type::Point* lefttop_;
-  ::google::protobuf::int64 height_;
-  ::google::protobuf::int64 width_;
+  ::google::protobuf::int32 height_;
+  ::google::protobuf::int32 width_;
   bool is_foreground_;
   int window_state_;
-  ::google::protobuf::int64 timestamp_;
+  ::google::protobuf::int32 timestamp_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_ssigmaapi_2ftype_2fuseractivity_2eproto::TableStruct;
 };
@@ -889,29 +889,29 @@ class ApplicationWindow : public ::google::protobuf::Message /* @@protoc_inserti
 #endif  // __GNUC__
 // UserActivity
 
-// int64 start_timestamp = 1;
+// int32 start_timestamp = 1;
 inline void UserActivity::clear_start_timestamp() {
-  start_timestamp_ = GOOGLE_LONGLONG(0);
+  start_timestamp_ = 0;
 }
-inline ::google::protobuf::int64 UserActivity::start_timestamp() const {
+inline ::google::protobuf::int32 UserActivity::start_timestamp() const {
   // @@protoc_insertion_point(field_get:ssigmaapi.type.UserActivity.start_timestamp)
   return start_timestamp_;
 }
-inline void UserActivity::set_start_timestamp(::google::protobuf::int64 value) {
+inline void UserActivity::set_start_timestamp(::google::protobuf::int32 value) {
   
   start_timestamp_ = value;
   // @@protoc_insertion_point(field_set:ssigmaapi.type.UserActivity.start_timestamp)
 }
 
-// int64 end_timestamp = 2;
+// int32 end_timestamp = 2;
 inline void UserActivity::clear_end_timestamp() {
-  end_timestamp_ = GOOGLE_LONGLONG(0);
+  end_timestamp_ = 0;
 }
-inline ::google::protobuf::int64 UserActivity::end_timestamp() const {
+inline ::google::protobuf::int32 UserActivity::end_timestamp() const {
   // @@protoc_insertion_point(field_get:ssigmaapi.type.UserActivity.end_timestamp)
   return end_timestamp_;
 }
-inline void UserActivity::set_end_timestamp(::google::protobuf::int64 value) {
+inline void UserActivity::set_end_timestamp(::google::protobuf::int32 value) {
   
   end_timestamp_ = value;
   // @@protoc_insertion_point(field_set:ssigmaapi.type.UserActivity.end_timestamp)
@@ -1069,15 +1069,15 @@ inline void UserActivity::set_allocated_mouse_input(::ssigmaapi::type::MouseInpu
   // @@protoc_insertion_point(field_set_allocated:ssigmaapi.type.UserActivity.mouse_input)
 }
 
-// int64 switch_application_count = 7;
+// int32 switch_application_count = 7;
 inline void UserActivity::clear_switch_application_count() {
-  switch_application_count_ = GOOGLE_LONGLONG(0);
+  switch_application_count_ = 0;
 }
-inline ::google::protobuf::int64 UserActivity::switch_application_count() const {
+inline ::google::protobuf::int32 UserActivity::switch_application_count() const {
   // @@protoc_insertion_point(field_get:ssigmaapi.type.UserActivity.switch_application_count)
   return switch_application_count_;
 }
-inline void UserActivity::set_switch_application_count(::google::protobuf::int64 value) {
+inline void UserActivity::set_switch_application_count(::google::protobuf::int32 value) {
   
   switch_application_count_ = value;
   // @@protoc_insertion_point(field_set:ssigmaapi.type.UserActivity.switch_application_count)
@@ -1087,15 +1087,15 @@ inline void UserActivity::set_switch_application_count(::google::protobuf::int64
 
 // KeyboardInput
 
-// int64 stroke_count = 1;
+// int32 stroke_count = 1;
 inline void KeyboardInput::clear_stroke_count() {
-  stroke_count_ = GOOGLE_LONGLONG(0);
+  stroke_count_ = 0;
 }
-inline ::google::protobuf::int64 KeyboardInput::stroke_count() const {
+inline ::google::protobuf::int32 KeyboardInput::stroke_count() const {
   // @@protoc_insertion_point(field_get:ssigmaapi.type.KeyboardInput.stroke_count)
   return stroke_count_;
 }
-inline void KeyboardInput::set_stroke_count(::google::protobuf::int64 value) {
+inline void KeyboardInput::set_stroke_count(::google::protobuf::int32 value) {
   
   stroke_count_ = value;
   // @@protoc_insertion_point(field_set:ssigmaapi.type.KeyboardInput.stroke_count)
@@ -1105,57 +1105,57 @@ inline void KeyboardInput::set_stroke_count(::google::protobuf::int64 value) {
 
 // MouseInput
 
-// int64 click_count = 1;
+// int32 click_count = 1;
 inline void MouseInput::clear_click_count() {
-  click_count_ = GOOGLE_LONGLONG(0);
+  click_count_ = 0;
 }
-inline ::google::protobuf::int64 MouseInput::click_count() const {
+inline ::google::protobuf::int32 MouseInput::click_count() const {
   // @@protoc_insertion_point(field_get:ssigmaapi.type.MouseInput.click_count)
   return click_count_;
 }
-inline void MouseInput::set_click_count(::google::protobuf::int64 value) {
+inline void MouseInput::set_click_count(::google::protobuf::int32 value) {
   
   click_count_ = value;
   // @@protoc_insertion_point(field_set:ssigmaapi.type.MouseInput.click_count)
 }
 
-// int64 left_click_count = 2;
+// int32 left_click_count = 2;
 inline void MouseInput::clear_left_click_count() {
-  left_click_count_ = GOOGLE_LONGLONG(0);
+  left_click_count_ = 0;
 }
-inline ::google::protobuf::int64 MouseInput::left_click_count() const {
+inline ::google::protobuf::int32 MouseInput::left_click_count() const {
   // @@protoc_insertion_point(field_get:ssigmaapi.type.MouseInput.left_click_count)
   return left_click_count_;
 }
-inline void MouseInput::set_left_click_count(::google::protobuf::int64 value) {
+inline void MouseInput::set_left_click_count(::google::protobuf::int32 value) {
   
   left_click_count_ = value;
   // @@protoc_insertion_point(field_set:ssigmaapi.type.MouseInput.left_click_count)
 }
 
-// int64 middle_click_count = 3;
+// int32 middle_click_count = 3;
 inline void MouseInput::clear_middle_click_count() {
-  middle_click_count_ = GOOGLE_LONGLONG(0);
+  middle_click_count_ = 0;
 }
-inline ::google::protobuf::int64 MouseInput::middle_click_count() const {
+inline ::google::protobuf::int32 MouseInput::middle_click_count() const {
   // @@protoc_insertion_point(field_get:ssigmaapi.type.MouseInput.middle_click_count)
   return middle_click_count_;
 }
-inline void MouseInput::set_middle_click_count(::google::protobuf::int64 value) {
+inline void MouseInput::set_middle_click_count(::google::protobuf::int32 value) {
   
   middle_click_count_ = value;
   // @@protoc_insertion_point(field_set:ssigmaapi.type.MouseInput.middle_click_count)
 }
 
-// int64 right_click_count = 4;
+// int32 right_click_count = 4;
 inline void MouseInput::clear_right_click_count() {
-  right_click_count_ = GOOGLE_LONGLONG(0);
+  right_click_count_ = 0;
 }
-inline ::google::protobuf::int64 MouseInput::right_click_count() const {
+inline ::google::protobuf::int32 MouseInput::right_click_count() const {
   // @@protoc_insertion_point(field_get:ssigmaapi.type.MouseInput.right_click_count)
   return right_click_count_;
 }
-inline void MouseInput::set_right_click_count(::google::protobuf::int64 value) {
+inline void MouseInput::set_right_click_count(::google::protobuf::int32 value) {
   
   right_click_count_ = value;
   // @@protoc_insertion_point(field_set:ssigmaapi.type.MouseInput.right_click_count)
@@ -1165,29 +1165,29 @@ inline void MouseInput::set_right_click_count(::google::protobuf::int64 value) {
 
 // Point
 
-// int64 x = 1;
+// int32 x = 1;
 inline void Point::clear_x() {
-  x_ = GOOGLE_LONGLONG(0);
+  x_ = 0;
 }
-inline ::google::protobuf::int64 Point::x() const {
+inline ::google::protobuf::int32 Point::x() const {
   // @@protoc_insertion_point(field_get:ssigmaapi.type.Point.x)
   return x_;
 }
-inline void Point::set_x(::google::protobuf::int64 value) {
+inline void Point::set_x(::google::protobuf::int32 value) {
   
   x_ = value;
   // @@protoc_insertion_point(field_set:ssigmaapi.type.Point.x)
 }
 
-// int64 y = 2;
+// int32 y = 2;
 inline void Point::clear_y() {
-  y_ = GOOGLE_LONGLONG(0);
+  y_ = 0;
 }
-inline ::google::protobuf::int64 Point::y() const {
+inline ::google::protobuf::int32 Point::y() const {
   // @@protoc_insertion_point(field_get:ssigmaapi.type.Point.y)
   return y_;
 }
-inline void Point::set_y(::google::protobuf::int64 value) {
+inline void Point::set_y(::google::protobuf::int32 value) {
   
   y_ = value;
   // @@protoc_insertion_point(field_set:ssigmaapi.type.Point.y)
@@ -1251,29 +1251,29 @@ inline void ApplicationWindow::set_allocated_lefttop(::ssigmaapi::type::Point* l
   // @@protoc_insertion_point(field_set_allocated:ssigmaapi.type.ApplicationWindow.lefttop)
 }
 
-// int64 height = 2;
+// int32 height = 2;
 inline void ApplicationWindow::clear_height() {
-  height_ = GOOGLE_LONGLONG(0);
+  height_ = 0;
 }
-inline ::google::protobuf::int64 ApplicationWindow::height() const {
+inline ::google::protobuf::int32 ApplicationWindow::height() const {
   // @@protoc_insertion_point(field_get:ssigmaapi.type.ApplicationWindow.height)
   return height_;
 }
-inline void ApplicationWindow::set_height(::google::protobuf::int64 value) {
+inline void ApplicationWindow::set_height(::google::protobuf::int32 value) {
   
   height_ = value;
   // @@protoc_insertion_point(field_set:ssigmaapi.type.ApplicationWindow.height)
 }
 
-// int64 width = 3;
+// int32 width = 3;
 inline void ApplicationWindow::clear_width() {
-  width_ = GOOGLE_LONGLONG(0);
+  width_ = 0;
 }
-inline ::google::protobuf::int64 ApplicationWindow::width() const {
+inline ::google::protobuf::int32 ApplicationWindow::width() const {
   // @@protoc_insertion_point(field_get:ssigmaapi.type.ApplicationWindow.width)
   return width_;
 }
-inline void ApplicationWindow::set_width(::google::protobuf::int64 value) {
+inline void ApplicationWindow::set_width(::google::protobuf::int32 value) {
   
   width_ = value;
   // @@protoc_insertion_point(field_set:ssigmaapi.type.ApplicationWindow.width)
@@ -1519,15 +1519,15 @@ inline void ApplicationWindow::set_window_state(::ssigmaapi::type::ApplicationWi
   // @@protoc_insertion_point(field_set:ssigmaapi.type.ApplicationWindow.window_state)
 }
 
-// int64 timestamp = 10;
+// int32 timestamp = 10;
 inline void ApplicationWindow::clear_timestamp() {
-  timestamp_ = GOOGLE_LONGLONG(0);
+  timestamp_ = 0;
 }
-inline ::google::protobuf::int64 ApplicationWindow::timestamp() const {
+inline ::google::protobuf::int32 ApplicationWindow::timestamp() const {
   // @@protoc_insertion_point(field_get:ssigmaapi.type.ApplicationWindow.timestamp)
   return timestamp_;
 }
-inline void ApplicationWindow::set_timestamp(::google::protobuf::int64 value) {
+inline void ApplicationWindow::set_timestamp(::google::protobuf::int32 value) {
   
   timestamp_ = value;
   // @@protoc_insertion_point(field_set:ssigmaapi.type.ApplicationWindow.timestamp)
