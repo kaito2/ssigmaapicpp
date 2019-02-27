@@ -152,6 +152,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::UserActivity, window_list_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::UserActivity, user_state_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::UserActivity, mouse_input_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::UserActivity, switch_application_count_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::KeyboardInput, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -163,6 +164,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::MouseInput, click_count_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::MouseInput, left_click_count_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::MouseInput, middle_click_count_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ssigmaapi::type::MouseInput, right_click_count_),
@@ -191,10 +193,10 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::ssigmaapi::type::UserActivity)},
-  { 11, -1, sizeof(::ssigmaapi::type::KeyboardInput)},
-  { 17, -1, sizeof(::ssigmaapi::type::MouseInput)},
-  { 25, -1, sizeof(::ssigmaapi::type::Point)},
-  { 32, -1, sizeof(::ssigmaapi::type::ApplicationWindow)},
+  { 12, -1, sizeof(::ssigmaapi::type::KeyboardInput)},
+  { 18, -1, sizeof(::ssigmaapi::type::MouseInput)},
+  { 27, -1, sizeof(::ssigmaapi::type::Point)},
+  { 34, -1, sizeof(::ssigmaapi::type::ApplicationWindow)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -227,32 +229,33 @@ void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
       "\n!ssigmaapi/type/useractivity.proto\022\016ssi"
-      "gmaapi.type\"\276\002\n\014UserActivity\022\027\n\017start_ti"
+      "gmaapi.type\"\340\002\n\014UserActivity\022\027\n\017start_ti"
       "mestamp\030\001 \001(\003\022\025\n\rend_timestamp\030\002 \001(\003\0225\n\016"
       "keyboard_input\030\003 \001(\0132\035.ssigmaapi.type.Ke"
       "yboardInput\0226\n\013window_list\030\004 \003(\0132!.ssigm"
       "aapi.type.ApplicationWindow\022:\n\nuser_stat"
       "e\030\005 \001(\0162&.ssigmaapi.type.UserActivity.Us"
       "erState\022/\n\013mouse_input\030\006 \001(\0132\032.ssigmaapi"
-      ".type.MouseInput\"\"\n\tUserState\022\013\n\007WORKING"
-      "\020\000\022\010\n\004AWAY\020\001\"%\n\rKeyboardInput\022\024\n\014stroke_"
-      "count\030\001 \001(\003\"]\n\nMouseInput\022\030\n\020left_click_"
-      "count\030\001 \001(\003\022\032\n\022middle_click_count\030\002 \001(\003\022"
-      "\031\n\021right_click_count\030\003 \001(\003\"\035\n\005Point\022\t\n\001x"
-      "\030\001 \001(\003\022\t\n\001y\030\002 \001(\003\"\315\002\n\021ApplicationWindow\022"
-      "&\n\007lefttop\030\001 \001(\0132\025.ssigmaapi.type.Point\022"
-      "\016\n\006height\030\002 \001(\003\022\r\n\005width\030\003 \001(\003\022\r\n\005title\030"
-      "\004 \001(\t\022\024\n\014program_name\030\005 \001(\t\022\023\n\013descripti"
-      "on\030\006 \001(\t\022\017\n\007company\030\007 \001(\t\022\025\n\ris_foregrou"
-      "nd\030\010 \001(\010\022C\n\014window_state\030\t \001(\0162-.ssigmaa"
-      "pi.type.ApplicationWindow.WindowState\022\021\n"
-      "\ttimestamp\030\n \001(\003\"7\n\013WindowState\022\n\n\006NORMA"
-      "L\020\000\022\r\n\tMAXIMIZED\020\001\022\r\n\tMINIMIZED\020\002B>Z<git"
-      "hub.com/kaito2/ssigmaapigo/type/useracti"
-      "vity;useractivityb\006proto3"
+      ".type.MouseInput\022 \n\030switch_application_c"
+      "ount\030\007 \001(\003\"\"\n\tUserState\022\013\n\007WORKING\020\000\022\010\n\004"
+      "AWAY\020\001\"%\n\rKeyboardInput\022\024\n\014stroke_count\030"
+      "\001 \001(\003\"r\n\nMouseInput\022\023\n\013click_count\030\001 \001(\003"
+      "\022\030\n\020left_click_count\030\002 \001(\003\022\032\n\022middle_cli"
+      "ck_count\030\003 \001(\003\022\031\n\021right_click_count\030\004 \001("
+      "\003\"\035\n\005Point\022\t\n\001x\030\001 \001(\003\022\t\n\001y\030\002 \001(\003\"\315\002\n\021App"
+      "licationWindow\022&\n\007lefttop\030\001 \001(\0132\025.ssigma"
+      "api.type.Point\022\016\n\006height\030\002 \001(\003\022\r\n\005width\030"
+      "\003 \001(\003\022\r\n\005title\030\004 \001(\t\022\024\n\014program_name\030\005 \001"
+      "(\t\022\023\n\013description\030\006 \001(\t\022\017\n\007company\030\007 \001(\t"
+      "\022\025\n\ris_foreground\030\010 \001(\010\022C\n\014window_state\030"
+      "\t \001(\0162-.ssigmaapi.type.ApplicationWindow"
+      ".WindowState\022\021\n\ttimestamp\030\n \001(\003\"7\n\013Windo"
+      "wState\022\n\n\006NORMAL\020\000\022\r\n\tMAXIMIZED\020\001\022\r\n\tMIN"
+      "IMIZED\020\002B>Z<github.com/kaito2/ssigmaapig"
+      "o/type/useractivity;useractivityb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 945);
+      descriptor, 1000);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "ssigmaapi/type/useractivity.proto", &protobuf_RegisterTypes);
 }
@@ -330,6 +333,7 @@ const int UserActivity::kKeyboardInputFieldNumber;
 const int UserActivity::kWindowListFieldNumber;
 const int UserActivity::kUserStateFieldNumber;
 const int UserActivity::kMouseInputFieldNumber;
+const int UserActivity::kSwitchApplicationCountFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 UserActivity::UserActivity()
@@ -500,6 +504,20 @@ bool UserActivity::MergePartialFromCodedStream(
         break;
       }
 
+      // int64 switch_application_count = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &switch_application_count_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -563,6 +581,11 @@ void UserActivity::SerializeWithCachedSizes(
       6, this->_internal_mouse_input(), output);
   }
 
+  // int64 switch_application_count = 7;
+  if (this->switch_application_count() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(7, this->switch_application_count(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -613,6 +636,11 @@ void UserActivity::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         6, this->_internal_mouse_input(), deterministic, target);
+  }
+
+  // int64 switch_application_count = 7;
+  if (this->switch_application_count() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(7, this->switch_application_count(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -671,6 +699,13 @@ size_t UserActivity::ByteSizeLong() const {
         this->end_timestamp());
   }
 
+  // int64 switch_application_count = 7;
+  if (this->switch_application_count() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->switch_application_count());
+  }
+
   // .ssigmaapi.type.UserActivity.UserState user_state = 5;
   if (this->user_state() != 0) {
     total_size += 1 +
@@ -717,6 +752,9 @@ void UserActivity::MergeFrom(const UserActivity& from) {
   if (from.end_timestamp() != 0) {
     set_end_timestamp(from.end_timestamp());
   }
+  if (from.switch_application_count() != 0) {
+    set_switch_application_count(from.switch_application_count());
+  }
   if (from.user_state() != 0) {
     set_user_state(from.user_state());
   }
@@ -751,6 +789,7 @@ void UserActivity::InternalSwap(UserActivity* other) {
   swap(mouse_input_, other->mouse_input_);
   swap(start_timestamp_, other->start_timestamp_);
   swap(end_timestamp_, other->end_timestamp_);
+  swap(switch_application_count_, other->switch_application_count_);
   swap(user_state_, other->user_state_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
@@ -989,6 +1028,7 @@ void KeyboardInput::InternalSwap(KeyboardInput* other) {
 void MouseInput::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int MouseInput::kClickCountFieldNumber;
 const int MouseInput::kLeftClickCountFieldNumber;
 const int MouseInput::kMiddleClickCountFieldNumber;
 const int MouseInput::kRightClickCountFieldNumber;
@@ -1005,16 +1045,16 @@ MouseInput::MouseInput(const MouseInput& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&left_click_count_, &from.left_click_count_,
+  ::memcpy(&click_count_, &from.click_count_,
     static_cast<size_t>(reinterpret_cast<char*>(&right_click_count_) -
-    reinterpret_cast<char*>(&left_click_count_)) + sizeof(right_click_count_));
+    reinterpret_cast<char*>(&click_count_)) + sizeof(right_click_count_));
   // @@protoc_insertion_point(copy_constructor:ssigmaapi.type.MouseInput)
 }
 
 void MouseInput::SharedCtor() {
-  ::memset(&left_click_count_, 0, static_cast<size_t>(
+  ::memset(&click_count_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&right_click_count_) -
-      reinterpret_cast<char*>(&left_click_count_)) + sizeof(right_click_count_));
+      reinterpret_cast<char*>(&click_count_)) + sizeof(right_click_count_));
 }
 
 MouseInput::~MouseInput() {
@@ -1045,9 +1085,9 @@ void MouseInput::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&left_click_count_, 0, static_cast<size_t>(
+  ::memset(&click_count_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&right_click_count_) -
-      reinterpret_cast<char*>(&left_click_count_)) + sizeof(right_click_count_));
+      reinterpret_cast<char*>(&click_count_)) + sizeof(right_click_count_));
   _internal_metadata_.Clear();
 }
 
@@ -1061,10 +1101,24 @@ bool MouseInput::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // int64 left_click_count = 1;
+      // int64 click_count = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
+                 input, &click_count_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int64 left_click_count = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
@@ -1075,10 +1129,10 @@ bool MouseInput::MergePartialFromCodedStream(
         break;
       }
 
-      // int64 middle_click_count = 2;
-      case 2: {
+      // int64 middle_click_count = 3;
+      case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
@@ -1089,10 +1143,10 @@ bool MouseInput::MergePartialFromCodedStream(
         break;
       }
 
-      // int64 right_click_count = 3;
-      case 3: {
+      // int64 right_click_count = 4;
+      case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
@@ -1129,19 +1183,24 @@ void MouseInput::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 left_click_count = 1;
+  // int64 click_count = 1;
+  if (this->click_count() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->click_count(), output);
+  }
+
+  // int64 left_click_count = 2;
   if (this->left_click_count() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->left_click_count(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->left_click_count(), output);
   }
 
-  // int64 middle_click_count = 2;
+  // int64 middle_click_count = 3;
   if (this->middle_click_count() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(2, this->middle_click_count(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(3, this->middle_click_count(), output);
   }
 
-  // int64 right_click_count = 3;
+  // int64 right_click_count = 4;
   if (this->right_click_count() != 0) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(3, this->right_click_count(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt64(4, this->right_click_count(), output);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1158,19 +1217,24 @@ void MouseInput::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int64 left_click_count = 1;
+  // int64 click_count = 1;
+  if (this->click_count() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->click_count(), target);
+  }
+
+  // int64 left_click_count = 2;
   if (this->left_click_count() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->left_click_count(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->left_click_count(), target);
   }
 
-  // int64 middle_click_count = 2;
+  // int64 middle_click_count = 3;
   if (this->middle_click_count() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(2, this->middle_click_count(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(3, this->middle_click_count(), target);
   }
 
-  // int64 right_click_count = 3;
+  // int64 right_click_count = 4;
   if (this->right_click_count() != 0) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(3, this->right_click_count(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(4, this->right_click_count(), target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -1190,21 +1254,28 @@ size_t MouseInput::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
   }
-  // int64 left_click_count = 1;
+  // int64 click_count = 1;
+  if (this->click_count() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int64Size(
+        this->click_count());
+  }
+
+  // int64 left_click_count = 2;
   if (this->left_click_count() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
         this->left_click_count());
   }
 
-  // int64 middle_click_count = 2;
+  // int64 middle_click_count = 3;
   if (this->middle_click_count() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
         this->middle_click_count());
   }
 
-  // int64 right_click_count = 3;
+  // int64 right_click_count = 4;
   if (this->right_click_count() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int64Size(
@@ -1238,6 +1309,9 @@ void MouseInput::MergeFrom(const MouseInput& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  if (from.click_count() != 0) {
+    set_click_count(from.click_count());
+  }
   if (from.left_click_count() != 0) {
     set_left_click_count(from.left_click_count());
   }
@@ -1273,6 +1347,7 @@ void MouseInput::Swap(MouseInput* other) {
 }
 void MouseInput::InternalSwap(MouseInput* other) {
   using std::swap;
+  swap(click_count_, other->click_count_);
   swap(left_click_count_, other->left_click_count_);
   swap(middle_click_count_, other->middle_click_count_);
   swap(right_click_count_, other->right_click_count_);
